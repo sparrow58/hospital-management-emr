@@ -3163,17 +3163,7 @@ table.tbPadding thead tr th {
     background-image: linear-gradient(to top, #4682B4, rgb(70, 130, 180));
 }
 
-.dashboard-inv-stat.dashboard-stat-v2 .visual {
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    bottom: -10px;
-    right: -15px;
-    width: 100px;
-    height: 100px;
-    z-index: 1;
-}
-
+.dashboard-inv-stat.dashboard-stat-v2 .visual,
 .dashboard-stat.dashboard-stat-v2 .visual {
     padding: 0;
     margin: 0;
@@ -3185,14 +3175,13 @@ table.tbPadding thead tr th {
     z-index: 1;
 }
 
-.dashboard-stat.dashboard-stat-v2 .visual .visual_icon {
-    margin-left: 0;
-    line-height: normal;
-    font-size: 20px;
-    opacity: 0.3;
-    margin: 0;
+:dir(rtl) .dashboard-inv-stat.dashboard-stat-v2 .visual,
+:dir(rtl) .dashboard-stat.dashboard-stat-v2 .visual {
+    right: auto;
+    left: -15px;
 }
 
+.dashboard-stat.dashboard-stat-v2 .visual .visual_icon,
 .dashboard-inv-stat.dashboard-stat-v2 .visual .visual_icon {
     margin-left: 0;
     line-height: normal;
@@ -3201,25 +3190,14 @@ table.tbPadding thead tr th {
     margin: 0;
 }
 
-.dashboard-stat.dashboard-stat-v2 .visual .visual_icon img {
-    width: 100%;
-    -webkit-filter: brightness(0) invert(1);
-    filter: brightness(0) invert(1);
-}
-
+.dashboard-stat.dashboard-stat-v2 .visual .visual_icon img,
 .dashboard-inv-stat.dashboard-stat-v2 .visual .visual_icon img {
     width: 100%;
     -webkit-filter: brightness(0) invert(1);
     filter: brightness(0) invert(1);
 }
 
-.dashboard-stat .details {
-    position: static;
-    color: #fff;
-    padding: 0;
-    z-index: 1;
-}
-
+.dashboard-stat .details,
 .dashboard-inv-stat .details {
     position: static;
     color: #fff;
@@ -3227,29 +3205,26 @@ table.tbPadding thead tr th {
     z-index: 1;
 }
 
-.dashboard-stat .details .board-title {
-    padding: 10px 15px 5px 15px;
-    position: relative;
-}
-
+.dashboard-stat .details .board-title,
 .dashboard-inv-stat .details .board-title {
     padding: 10px 15px 5px 15px;
     position: relative;
 }
 
-.dashboard-stat .details .board-title div {
-    float: left;
-    font-size: 14px;
-    font-weight: 700;
-}
-
+.dashboard-stat .details .board-title div,
 .dashboard-inv-stat .details .board-title div {
     float: left;
     font-size: 14px;
     font-weight: 700;
 }
 
-.dashboard-stat .details .board-title .count {
+:dir(rtl) .dashboard-stat .details .board-title div,
+:dir(rtl) .dashboard-inv-stat .details .board-title div {
+    float: right;
+}
+
+.dashboard-stat .details .board-title .count,
+.dashboard-inv-stat .details .board-title .count {
     float: right;
     font-size: 25px;
     font-weight: 800;
@@ -3259,31 +3234,19 @@ table.tbPadding thead tr th {
     right: 15px;
 }
 
-.dashboard-inv-stat .details .board-title .count {
-    float: right;
-    font-size: 19px;
-    font-weight: 800;
-    line-height: normal;
-    position: absolute;
-    top: 5px;
-    right: 15px;
+:dir(rtl) .dashboard-stat .details .board-title .count,
+:dir(rtl) .dashboard-inv-stat .details .board-title .count {
+    float: left;
+    right: auto;
+    left: 15px;
 }
 
-.dashboard-stat .details .board-title div p {
-    margin: 0;
-}
-
+.dashboard-stat .details .board-title div p,
 .dashboard-inv-stat .details .board-title div p {
     margin: 0;
 }
 
-.dashboard-stat .details .board-title div span {
-    display: inline-block;
-    font-weight: 500;
-    font-size: 13px;
-    margin-right: 10px;
-}
-
+.dashboard-stat .details .board-title div span,
 .dashboard-inv-stat .details .board-title div span {
     display: inline-block;
     font-weight: 500;
@@ -3291,42 +3254,43 @@ table.tbPadding thead tr th {
     margin-right: 10px;
 }
 
-.dashboard-stat .details .board-title div span+span {
-    display: inline-block;
+:dir(rtl) .dashboard-stat .details .board-title div span,
+:dir(rtl) .dashboard-inv-stat .details .board-title div span {
+    margin-right: 0;
+    margin-left: 10px;
 }
 
+.dashboard-stat .details .board-title div span+span,
 .dashboard-inv-stat .details .board-title div span+span {
     display: inline-block;
 }
 
-.dashboard-stat .details .left {
-    padding: 10px 15px 9px 15px;
-    float: none;
-}
-
+.dashboard-stat .details .left,
 .dashboard-inv-stat .details .left {
     padding: 10px 15px 9px 15px;
     float: none;
 }
 
-.dashboard-stat .details .left span {
-    display: inline-block;
-    float: left;
-    font-size: 13px;
-}
-
+.dashboard-stat .details .left span,
 .dashboard-inv-stat .details .left span {
     display: inline-block;
     float: left;
     font-size: 13px;
 }
 
-.dashboard-stat .details .left span+span {
+:dir(rtl) .dashboard-stat .details .left span,
+:dir(rtl) .dashboard-inv-stat .details .left span {
     float: right;
 }
 
+.dashboard-stat .details .left span+span,
 .dashboard-inv-stat .details .left span+span {
     float: right;
+}
+
+:dir(rtl) .dashboard-stat .details .left span+span,
+:dir(rtl) .dashboard-inv-stat .details .left span+span {
+    float: left;
 }
 
 .portlet.light {

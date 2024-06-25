@@ -1,0 +1,26 @@
+{
+  "danphe": {
+    "hospital_no": "Hospital No",
+    "age_sex": "Age/Sex",
+    "membership_type": "Membership Type",
+    "my_profile": "ملفي الشخصي",
+    "date": "Date",
+    "log_out": "تسجيل خروج",
+    "download_user_manual": "حمل دليل المستخدم"
+  },
+  "dashboard": {
+    "registered_patient": "المرضى المسجلين",
+    "total_patient": "اجمالي المرضى",
+    "today": "اليوم",
+    "yesterday": "أمس",
+    "total_doctors": "إجمالي الأطباء",
+    "consultants": "الإستشاريون",
+    "medical_officers": "ضباط طبيون",
+    "anaesthetists": "أطباء التخدير",
+    "todays_appointments": "مواعيد اليوم",
+    "new": "جديد",
+    "follow_up": "متابعة",
+    "cancelled": "ملغي",
+    "returned": "عودة"
+  }
+}

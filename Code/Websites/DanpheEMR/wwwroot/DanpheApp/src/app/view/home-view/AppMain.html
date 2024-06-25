@@ -92,8 +92,7 @@
           <b class="header-sm">
             <i class="fa fa-user"></i>{{PatService.globalPatient.ShortName}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <span *ngIf="PatService.globalPatient.PatientCode != null">
-              <i class="fa fa-h-square"></i>Hospital No : {{PatService.globalPatient.PatientCode}}
-            </span>
+              <i class="fa fa-h-square"></i>{{'danphe.hospital_no' | translate}} : {{PatService.globalPatient.PatientCode}} </span>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </b>
           <b class="header-sm">
@@ -178,7 +177,7 @@
               <ul class="dropdown-menu dropdown-menu-default">
                 <li>
                   <a routerLink="Employee/ProfileMain">
-                    <i class="icon-user"></i> My Profile
+                    <i class="icon-user"></i> {{'danphe.my_profile' | translate}}
                   </a>
                 </li>
                 <li (click)="openShowDatePreference()" *ngIf="!EnableEnglishCalendarOnly">
@@ -192,7 +191,7 @@
                     <i class="icon-key"></i> Log Out
                   </a>-->
                   <a (click)="LogoutFromAplication()">
-                    <i class="icon-key"></i> Log Out
+                    <i class="icon-key"></i> {{'danphe.log_out' | translate}}
                   </a>
                 </li>
               </ul>
@@ -214,7 +213,7 @@
               <ul class="dropdown-menu dropdown-menu-default">
                 <li>
                   <a (click)="DownloadUserManual()">
-                    <i class="fa fa-download"></i>Download user manual
+                    <i class="fa fa-download"></i>{{'danphe.download_user_manual' | translate}}
                   </a>
                 </li>
 
@@ -226,6 +225,9 @@
         </div>
         <!-- END TOP NAVIGATION MENU -->
       </div>
+      <select #langSelect (change)="ChangeCurrentLanguage(langSelect.value)">
+        <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+      </select>
       <!-- END HEADER INNER -->
     </div>
     <!-- END HEADER -->

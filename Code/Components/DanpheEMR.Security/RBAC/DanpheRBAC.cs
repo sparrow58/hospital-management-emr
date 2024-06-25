@@ -126,7 +126,7 @@ namespace DanpheEMR.Security
             List<DanpheRoute> allRoutes = new List<DanpheRoute>();
 
             List<RbacPermission> userAllPerms = GetUserAllPermissions(userId);
-            allRoutes = (from route in RBAC.GetAllRoutes()
+            allRoutes = (from route in GetAllRoutes()
                          join perm in userAllPerms
                          on route.PermissionId equals perm.PermissionId
                          where route.IsActive == true
@@ -146,7 +146,7 @@ namespace DanpheEMR.Security
             }
             else
             {
-                return allRoutes.ToList();
+                return allRoutes;
             }
         }
         //don't get hidden routes if it's set to false.

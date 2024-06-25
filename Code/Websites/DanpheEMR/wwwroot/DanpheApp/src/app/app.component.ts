@@ -26,7 +26,7 @@ import { DanpheCache, MasterType } from './shared/danphe-cache-service-utility/c
 import { NavigationService } from './shared/navigation-service';
 import { ENUM_CalendarTypes, ENUM_DanpheHTTPResponses, ENUM_LocalStorageKeys, ENUM_MessageBox_Status, ENUM_ServiceBillingContext } from './shared/shared-enums';
 // import { parse } from 'path';
-
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'my-app',
@@ -48,6 +48,8 @@ export class AppComponent {
   public selectedDatePref: string = "";
   public defaultCal = "";
   public EnableEnglishCalendarOnly: boolean = false;
+
+  currentLanguage: string;
   constructor(public _http: HttpClient, _serv: PatientService,
     public router: Router,
     public VisService: VisitService,
@@ -57,7 +59,24 @@ export class AppComponent {
     public dlService: DLService, public navService: NavigationService,
     public changeDetector: ChangeDetectorRef,
     public msgBoxServ: MessageboxService,
+    public translate: TranslateService,
     public elementRef: ElementRef) {
+
+    const getBrowserLang = () => {
+      const browserLang = translate.getBrowserLang();
+      return browserLang.match(/en|ar/) ? browserLang : 'en'
+    }
+    this.currentLanguage = localStorage.getItem("currentLang") || getBrowserLang()
+
+    translate.addLangs(['en', 'ar']);
+    translate.setDefaultLang('en');
+
+    if (this.currentLanguage === 'ar') {
+      document.documentElement.setAttribute('dir', 'rtl');
+    } else {
+      document.documentElement.setAttribute('dir', 'ltr');
+    }
+    translate.use(this.currentLanguage);
 
     this.SetLoginTokenToLocalStorage(); //* using this method to set loginToken to localStorage.
 
@@ -645,4 +664,15 @@ export class AppComponent {
   public GetSchemeList() {
     this.coreService.GetSchemeList(ENUM_ServiceBillingContext.OpBilling);
   }
+
+  ChangeCurrentLanguage(lang: string) {
+    if (lang === 'ar') {
+      document.documentElement.setAttribute('dir', 'rtl');
+    } else {
+      document.documentElement.setAttribute('dir', 'ltr');
+    }
+    this.translate.use(lang);
+    localStorage.setItem("currentLang", lang);
+  }
+
 }

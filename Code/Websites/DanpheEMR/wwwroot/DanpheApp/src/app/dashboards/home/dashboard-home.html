@@ -6,25 +6,13 @@
         <div class="details clearfix">
           <div class="board-title clearfix">
             <div>
-              <p>Registered Patient </p>
-              <span>Total Patient: {{dsbStats.TotalPatient}} </span>
+              <p>{{'dashboard.registered_patient' | translate}} </p>
+              <span>{{'dashboard.total_patient' | translate}} : {{dsbStats.TotalPatient}} </span>
             </div>
             <div class="count">{{dsbStats.TotalPatient}}</div>
           </div>
-          <div class="left clearfix"> <span>Today : {{dsbStats.TodayPatient}} </span> <span>Yesterday : {{dsbStats.YestardayPatient}} </span> </div>
-          <!-- <div>
-
-            <div class="left">
-              <span>Today : {{dsbStats.TodayPatient}} </span><br />
-              <span>Yesterday : {{dsbStats.YestardayPatient}} </span><br />
-            </div>
--->
-          <!--
-            <div class="right">
-              <span>Total Patient : {{dsbStats.TotalPatient}} </span><br />
-            </div>
-
-          </div>-->
+          <div class="left clearfix"> <span>{{'dashboard.today' | translate}} : {{dsbStats.TodayPatient}} </span> <span>{{'dashboard.yesterday' |
+              translate}} : {{dsbStats.YestardayPatient}} </span> </div>
         </div>
       </div>
     </div>
@@ -32,35 +20,20 @@
       <div class="dashboard-stat dashboard-stat-v2 red">
         <div class="visual"> <i class="visual_icon"><img src="../../themes/theme-default/images/dashboard_icon/doctor.svg" alt=""></i> </div>
         <div class="details clearfix">
-          <!--
-                <div class="board-title clearfix">
-                    Total Doctors : {{dsbStats.TotalDoctorsCount}}
-                </div>
--->
           <div class="board-title clearfix">
             <div>
-              <p>Total Doctors</p>
-              <span>Consultants : {{dsbStats.ConsultantsCount}} </span>
+              <p>{{'dashboard.total_doctors' | translate}}</p>
+              <span>{{'dashboard.consultants' | translate}} : {{dsbStats.ConsultantsCount}} </span>
             </div>
             <div class="count">{{dsbStats.TotalDoctorsCount}}</div>
           </div>
           <div class="left clearfix">
             <!--                        <span>Consultants : {{dsbStats.ConsultantsCount}} </span><br />-->
-            <span>Medical Officers: {{dsbStats.MedicalOfficersCount}} </span> <span>Anaesthetists: {{dsbStats.AnaesthetistsCount}} </span>
+            <span>{{'dashboard.medical_officers' | translate}}: {{dsbStats.MedicalOfficersCount}} </span> <span>{{'dashboard.anaesthetists' |
+              translate}}:
+              {{dsbStats.AnaesthetistsCount}} </span>
           </div>
-          <!--
-                    <div class="right">
-                        <span>Anaesthetists: {{dsbStats.AnaesthetistsCount}} </span><br />
-                    </div>
--->
-
         </div>
-        <!--<div class="details">
-        <div class="number">
-            <span data-counter="counterup" data-value="12,5">{{dsbStats.TotalDoctors}}</span>
-        </div>
-        <div class="desc"> Total Doctors </div>
-    </div>-->
       </div>
     </div>
     <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12"> <a class="dashboard-stat dashboard-stat-v2 green">
@@ -70,21 +43,15 @@
         <div class="details clearfix">
           <div class="board-title clearfix">
             <div>
-              <p>Today's Appointments</p>
-              <span>New : {{dsbStats.NewAppts}} </span> <span>Follow up : {{dsbStats.FollowUpAppts}} </span> <span>Referrals :
+              <p>{{'dashboard.todays_appointments' | translate}}</p>
+              <span>{{'dashboard.new' | translate}} : {{dsbStats.NewAppts}} </span> <span>{{'dashboard.follow_up' | translate}} :
+                {{dsbStats.FollowUpAppts}} </span> <span>Referrals :
                 {{dsbStats.ReferralAppts}} </span>
             </div>
             <div class="count">{{dsbStats.TotalAppts}}</div>
           </div>
-          <!--      <div style="text-align: center;font-weight: bold;font-size: 17px;margin-bottom:10px;margin-top:5px;"> Today's Appointments : {{dsbStats.TotalAppts}} </div>-->
-
-          <!--
-        <div class="left"> <span>New : {{dsbStats.NewAppts}} </span>
-          <span>Follow up : {{dsbStats.FollowUpAppts}} </span>
-          <span>Referrals : {{dsbStats.ReferralAppts}} </span>
-        </div>
--->
-          <div class="left clearfix"> <span>Cancelled : {{dsbStats.CancelAppts}} </span> <span>Returned : {{dsbStats.ReturnAppts}} </span> </div>
+          <div class="left clearfix"> <span>{{'dashboard.cancelled' | translate}} : {{dsbStats.CancelAppts}} </span> <span>{{'dashboard.returned' |
+              translate}} : {{dsbStats.ReturnAppts}} </span> </div>
         </div>
       </a> </div>
   </div>

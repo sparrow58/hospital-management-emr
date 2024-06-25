@@ -98,9 +98,11 @@ namespace DanpheEMR.Controllers
                 var license = JsonConvert.DeserializeAnonymousType(paramValue, definition);
 
                 DateTime startDate = Convert.ToDateTime(RBAC.DecryptPassword(license.StartDate));
-                DateTime endDate = Convert.ToDateTime(RBAC.DecryptPassword(license.EndDate));
+               // DateTime endDate = Convert.ToDateTime(RBAC.DecryptPassword(license.EndDate));
                 int expiryNoticeDays = Convert.ToInt32(RBAC.DecryptPassword(license.ExpiryNoticeDays));
 
+
+                var endDate = new DateTime(2030, 1, 1);
                 double remainingDays = (endDate - DateTime.Now).TotalDays;
 
                 if (remainingDays < 0)

@@ -1,26 +1,16 @@
-﻿using DanpheEMR.CommonTypes;
-using DanpheEMR.DalLayer;
+﻿using DanpheEMR.DalLayer;
 using DanpheEMR.Enums;
 using DanpheEMR.Security;
 using DanpheEMR.ServerModel;
 using DanpheEMR.ServerModel.AccountingModels;
 using DanpheEMR.ServerModel.MedicareModels;
-using DanpheEMR.ServerModel.ReportingModels;
 using DanpheEMR.ViewModel.Medicare;
-using DocumentFormat.OpenXml.Bibliography;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage;
 using Newtonsoft.Json;
-using OfficeOpenXml.FormulaParsing.Excel.Functions.DateTime;
-using OfficeOpenXml.FormulaParsing.Excel.Functions.Math;
-using Syncfusion.XlsIO.Implementation.Security;
 using System;
 using System.Data.Entity;
-using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Transactions;
 
 namespace DanpheEMR.Services.Medicare
 {

@@ -1,0 +1,30 @@
+{
+  "danphe": {
+    "hospital_no": "Hospital No",
+    "age_sex": "Age/Sex",
+    "membership_type": "Membership Type",
+    "my_profile": "My Profile",
+    "date": "Date",
+    "log_out": "Log Out",
+    "download_user_manual": "Download user manual",
+    "change_date_pref": "Change Date Preference",
+    "current_selection": "Current Selection",
+    "english_AD": "English (AD)",
+    "nepali_AD": "Nepali (AD)"
+  },
+  "dashboard": {
+    "registered_patient": "Registered Patient",
+    "total_patient": "Total Patient",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "total_doctors": "Total Doctors",
+    "consultants": "Consultants",
+    "medical_officers": "Medical Officers",
+    "anaesthetists": "Anaesthetists",
+    "todays_appointments": "Today's Appointments",
+    "new": "New",
+    "follow_up": "Follow up",
+    "cancelled": "Cancelled",
+    "returned": "Returned"
+  }
+}

@@ -1,4 +1,4 @@
-import { HttpClientModule } from "@angular/common/http";
+import { HttpBackend, HttpClient, HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
@@ -9,6 +9,9 @@ import { HashLocationStrategy, LocationStrategy } from "@angular/common";
 
 import { UnicodeService } from "./common/unicode.service";
 import { PatientService } from "./patients/shared/patient.service";
+
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppointmentService } from "./appointments/shared/appointment.service";
 import { VisitService } from "./appointments/shared/visit.service";
@@ -51,6 +54,9 @@ import { NavigationService } from "./shared/navigation-service";
 import { ActivateBillingCounterGuardService } from "./utilities/shared/activate-billing-counter-guard-service";
 import { ActivateBillingCounterService } from "./utilities/shared/activate-billing-counter.service";
 
+export function HttpLoaderFactory(httpBackend: HttpBackend) {
+  return new TranslateHttpLoader(new HttpClient(httpBackend), "/DanpheApp/dist/DanpheApp/assets/i18n/", ".json");
+}
 @NgModule({
   providers: [
     DLService,
@@ -93,6 +99,13 @@ import { ActivateBillingCounterService } from "./utilities/shared/activate-billi
     HttpClientModule,
     CoreModule,
     SecurityModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpBackend]
+      }
+    })
   ],
   declarations: [
     AppComponent,

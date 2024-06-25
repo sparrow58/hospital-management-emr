@@ -1,9 +1,9 @@
-import { ChangeDetectorRef, Component } from '@angular/core'
+import { ChangeDetectorRef, Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import * as moment from 'moment/moment';
+import { CoreService } from '../../core/shared/core.service';
 import { DanpheChartsService } from '../../dashboards/shared/danphe-charts.service';
 import { DLService } from "../../shared/dl.service";
-import * as moment from 'moment/moment';
-import { Observable } from 'rxjs';
-import { CoreService } from '../../core/shared/core.service'
 @Component({
   selector: 'my-app',
   templateUrl: "./dashboard-home.html"
@@ -14,10 +14,12 @@ export class DashboardHomeComponent {
 
   public dsbStats: any = "";
   public currentDate: string = "";
-  public showCountryMap:boolean=true;
-  constructor(public danpheCharts: DanpheChartsService, public dlService: DLService,public coreService: CoreService,public changeDetector: ChangeDetectorRef) {
+  public showCountryMap: boolean = true;
+  constructor(public danpheCharts: DanpheChartsService, public dlService: DLService, public coreService: CoreService, public changeDetector: ChangeDetectorRef,
+    public translate: TranslateService,
+  ) {
     this.currentDate = moment().format("DD-MM-YYYY");
-    this.showCountryMap=this.coreService.showCountryMapOnLandingPage;
+    this.showCountryMap = this.coreService.showCountryMapOnLandingPage;
   }
 
   ngOnInit() {
@@ -27,7 +29,7 @@ export class DashboardHomeComponent {
     this.LoadDepartmentAppts();
   }
   ngAfterViewChecked() {
-    this.showCountryMap=this.coreService.showCountryMapOnLandingPage;
+    this.showCountryMap = this.coreService.showCountryMapOnLandingPage;
   }
   LoadDsbStatistics() {
     this.dlService.Read("/Reporting/HomeDashboardStats")
